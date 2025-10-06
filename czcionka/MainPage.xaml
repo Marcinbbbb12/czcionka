@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="czcionka.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                x:Name="QuoteLabel"
+                Text="Dzień dobry" 
+                BackgroundColor="green"
+                Style="{StaticResource Headline}"
+                />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Rozmiar: "/>
+                <Label x:Name="SizeValueLabel" Text="20" />
+            </StackLayout>
+
+            <Slider x:Name="SizeSlider"
+                Maximum="100" 
+                Minimum="10" 
+                Value="20"
+                ValueChanged="OnSliderValueChanged" 
+                />
+
+            <Button
+                x:Name="ChangeTextBtn" 
+                Text="Zmień tekst" 
+                BackgroundColor="Green"
+                Clicked="OnChangeTextClicked" 
+                HorizontalOptions="Fill" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
