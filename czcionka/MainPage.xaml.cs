@@ -1,19 +1,19 @@
-﻿namespace czcionka
+﻿using System.Runtime.CompilerServices;
+
+namespace czcionka
 {
     public partial class MainPage : ContentPage
     {
-        // Indeks śledzący, który cytat jest obecnie wyświetlany
         int quoteIndex = 0;
 
-        // Tablica dostępnych cytatów
+
         readonly string[] quotes = { "Dzień dobry", "Good morning", "Buenos dias" };
 
         public MainPage()
         {
             InitializeComponent();
 
-            // Ustawienie początkowego rozmiaru i wartości etykiety przy starcie aplikacji
-            // (Zapewnienie działania funkcji suwaka dla stanu początkowego)
+
             SizeValueLabel.Text = SizeSlider.Value.ToString("F0");
             QuoteLabel.FontSize = SizeSlider.Value;
         }
@@ -31,7 +31,15 @@
             QuoteLabel.FontSize = integerValue;
         }
 
-        
+
+        private void OnSliderValueChanged1(object? sender, ValueChangedEventArgs e)
+        {
+            int b = (int)e.NewValue;
+            ColorLabel.TextColor = Color.FromRgb(b, 255 - b, (b / 2));
+
+        }
+
+
         private void OnChangeTextClicked(object? sender, EventArgs e)
         {
             
@@ -47,7 +55,7 @@
             QuoteLabel.Text = quotes[quoteIndex];
 
            
-            ChangeTextBtn.Text = "Zmień tekst";
+            ChangeTextBtn.Text = ">>";
         }
     }
 }

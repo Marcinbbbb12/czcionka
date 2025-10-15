@@ -8,11 +8,10 @@
             Padding="30,0"
             Spacing="25">
 
-            <Label
-                x:Name="QuoteLabel"
-                Text="Dzień dobry" 
+            <Label 
+                Text="Właściwości czcionki"
                 BackgroundColor="green"
-                Style="{StaticResource Headline}"
+                    Style="{StaticResource Headline}"
                 />
 
             <StackLayout Orientation="Horizontal">
@@ -27,12 +26,46 @@
                 ValueChanged="OnSliderValueChanged" 
                 />
 
+
+            <Label
+    x:Name="QuoteLabel"
+    Text="Dzień dobry" 
+    
+
+    />
+
             <Button
+                WidthRequest="45"
                 x:Name="ChangeTextBtn" 
-                Text="Zmień tekst" 
+                Text=">>" 
                 BackgroundColor="Green"
                 Clicked="OnChangeTextClicked" 
                 HorizontalOptions="Fill" />
+
+
+            <Label 
+    Text="Zmien kolor tekstu"
+        x:Name="ColorLabel"
+        Style="{StaticResource Headline}"
+    />
+            <Slider x:Name="SizeSlider2"
+     Maximum="100" 
+     Minimum="10" 
+     Value="20"
+     ValueChanged="OnSliderValueChanged1" 
+     />
+
+            <Image
+                    x:Name="planeImage"
+                    Source="https://media.tenor.com/Mj_mEl4XbFQAAAAi/enojado.gif"
+                    WidthRequest="100"
+                    HeightRequest="100" />
+            <Image
+                    x:Name="planeImage"
+                    Source="https://media.tenor.com/HGU35plB5gUAAAAi/animals.gif"
+                    WidthRequest="100"
+                    HeightRequest="100" />
+            
 
         </VerticalStackLayout>
     </ScrollView>
